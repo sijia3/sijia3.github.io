@@ -1806,6 +1806,32 @@ pre .javascript .function {
   font-size: 13px;
   color: #999;
 }
+.site-author-image {
+  display: block;
+  margin: 0 auto;
+  padding: 2px;
+  max-width: 120px;
+  height: auto;
+  border: site-author-image-border-color;
+/* start*/
+  border-radius: 50%;
+  webkit-transition: 1.4s all;
+  moz-transition: 1.4s all;
+  ms-transition: 1.4s all;
+  transition: 1.4s all;
+/* end */
+}
+.site-author-image:hover {
+  background-color: #55dae1;
+  webkit-transform: rotate(360deg) scale(1.1);
+  moz-transform: rotate(360deg) scale(1.1);
+  ms-transform: rotate(360deg) scale(1.1);
+  -webkit-transform: rotate(360deg) scale(1.1);
+  -moz-transform: rotate(360deg) scale(1.1);
+  -ms-transform: rotate(360deg) scale(1.1);
+  -o-transform: rotate(360deg) scale(1.1);
+  transform: rotate(360deg) scale(1.1);
+}
 .site-state {
   overflow: hidden;
   line-height: 1.4;
@@ -1874,7 +1900,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #a74039;
+  background: #c80578;
 }
 .links-of-blogroll {
   font-size: 13px;
