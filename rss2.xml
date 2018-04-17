@@ -8,44 +8,27 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>我是一个无聊的人</description>
-    <pubDate>Thu, 12 Apr 2018 12:09:04 GMT</pubDate>
+    <pubDate>Tue, 17 Apr 2018 09:52:41 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
-      <title>你是一个有趣的灵魂</title>
-      <link>http://www.sijia3.top/2018/05/22/%E6%88%91%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%EF%BC%8C%E5%93%88%E5%93%88%E5%93%88/</link>
-      <guid>http://www.sijia3.top/2018/05/22/%E6%88%91%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%EF%BC%8C%E5%93%88%E5%93%88%E5%93%88/</guid>
-      <pubDate>Tue, 22 May 2018 14:53:53 GMT</pubDate>
+      <title>java web项目推荐结构</title>
+      <link>http://www.sijia3.top/2018/04/17/java-web%E9%A1%B9%E7%9B%AE%E6%8E%A8%E8%8D%90%E7%BB%93%E6%9E%84/</link>
+      <guid>http://www.sijia3.top/2018/04/17/java-web%E9%A1%B9%E7%9B%AE%E6%8E%A8%E8%8D%90%E7%BB%93%E6%9E%84/</guid>
+      <pubDate>Tue, 17 Apr 2018 09:27:16 GMT</pubDate>
       <description>
       
         
         
-          &lt;p&gt;在这里写下现在的心情&lt;/p&gt;
-&lt;h2 id=&quot;第一&quot;&gt;&lt;a href=&quot;#第一&quot; class=&quot;headerlink&quot; title=&quot;第一&quot;&gt;&lt;/a&gt;第一&lt;/h2&gt;&lt;h3 id=&quot;其中&quot;&gt;&lt;a href=&quot;#其中&quot; class=&quot;headerlink&quot; title=&quot;其中&quot;
+          &lt;p&gt;前言：一个良好的工程结构划分可以使项目更加清晰，明确。提高代码的统一性和便于后期的维护和管理。&lt;/p&gt;
+&lt;h2 id=&quot;下面给出推荐工程结构：&quot;&gt;&lt;a href=&quot;#下面给出推荐工程结构：&quot; class=&quot;headerlink&quot; title=&quot;下面给出推荐工程结构：&quot;&gt;&lt;/
         
       
       </description>
       
-      <content:encoded><![CDATA[<p>在这里写下现在的心情</p><h2 id="第一"><a href="#第一" class="headerlink" title="第一"></a>第一</h2><h3 id="其中"><a href="#其中" class="headerlink" title="其中"></a>其中</h3>]]></content:encoded>
+      <content:encoded><![CDATA[<p>前言：一个良好的工程结构划分可以使项目更加清晰，明确。提高代码的统一性和便于后期的维护和管理。</p><h2 id="下面给出推荐工程结构："><a href="#下面给出推荐工程结构：" class="headerlink" title="下面给出推荐工程结构："></a>下面给出推荐工程结构：</h2><pre><code>com    +- sijia3        +- domain        | +- Customer.java        |        +- dao        | +-         | +- CustomerRepository.java        |        +- service        | +- CustomerService.java        |        +- controller        | +- CustomerController.java        |        +- Application.java        |</code></pre><ol><li>实体类(domain),存放用户定义的实体类。</li><li>数据访问层(Dao),提供数据库的方法，可用jpa实现更为方便。</li><li>业务逻辑层(service),主要写一些处理逻辑业务关系的代码。</li><li>控制层(controller),负责页面访问控制，如提供api</li><li>Application.java 是应用的启动类，一切从此开始。</li></ol>]]></content:encoded>
       
-      <comments>http://www.sijia3.top/2018/05/22/%E6%88%91%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2%EF%BC%8C%E5%93%88%E5%93%88%E5%93%88/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>Hello World</title>
-      <link>http://www.sijia3.top/2018/04/11/hello-world/</link>
-      <guid>http://www.sijia3.top/2018/04/11/hello-world/</guid>
-      <pubDate>Wed, 11 Apr 2018 14:21:27 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
-&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-      
-      </description>
-      
-      <content:encoded><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><a id="more"></a><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content:encoded>
-      
-      <comments>http://www.sijia3.top/2018/04/11/hello-world/#disqus_thread</comments>
+      <comments>http://www.sijia3.top/2018/04/17/java-web%E9%A1%B9%E7%9B%AE%E6%8E%A8%E8%8D%90%E7%BB%93%E6%9E%84/#disqus_thread</comments>
     </item>
     
   </channel>
