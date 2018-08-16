@@ -8,8 +8,20 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>我是一个无聊的人</description>
-    <pubDate>Wed, 18 Apr 2018 13:12:09 GMT</pubDate>
+    <pubDate>Thu, 16 Aug 2018 09:45:00 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>dddd</title>
+      <link>http://www.sijia3.top/2018/08/16/dddd/</link>
+      <guid>http://www.sijia3.top/2018/08/16/dddd/</guid>
+      <pubDate>Thu, 16 Aug 2018 09:45:00 GMT</pubDate>
+      <description>
+      
+      </description>
+      
+      <comments>http://www.sijia3.top/2018/08/16/dddd/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>静态资源配置问题</title>
