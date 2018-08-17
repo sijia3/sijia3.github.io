@@ -8,17 +8,25 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>我是一个无聊的人</description>
-    <pubDate>Thu, 16 Aug 2018 09:45:00 GMT</pubDate>
+    <pubDate>Fri, 17 Aug 2018 07:01:44 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
-      <title>dddd</title>
+      <title>事务</title>
       <link>http://www.sijia3.top/2018/08/16/dddd/</link>
       <guid>http://www.sijia3.top/2018/08/16/dddd/</guid>
       <pubDate>Thu, 16 Aug 2018 09:45:00 GMT</pubDate>
       <description>
       
+        
+        
+          &lt;h1 id=&quot;事务&quot;&gt;&lt;a href=&quot;#事务&quot; class=&quot;headerlink&quot; title=&quot;事务&quot;&gt;&lt;/a&gt;事务&lt;/h1&gt;&lt;p&gt;事务是一个抽象，它将一系列的细微操作组合起来形成一个整体上的操作。这个整体的操作要么成功，要么失败，不存在其他状态（原子性）&lt;/p&gt;
+&lt;p&gt;
+        
+      
       </description>
+      
+      <content:encoded><![CDATA[<h1 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h1><p>事务是一个抽象，它将一系列的细微操作组合起来形成一个整体上的操作。这个整体的操作要么成功，要么失败，不存在其他状态（原子性）</p><p>举一个简单的例子，货品入库粗略可分为下面两个行为：</p><ol><li>创建货品入库数量的入库单</li><li>在对应的货品表中添加对应的货品数量</li></ol><p>一个成功的入库操作。上面的两个行为必须要一起成功。不允许创建入库数据单之后，却没有在相应的数据表添加数据。这是不合法的。</p><p>在springboot中，使用事务功能需要用到@Transactional这个注解。</p><p>例如在Controller中某个方法下使用该注解。</p><hr><pre><code>@Transactional@Overridepublic void save() {    User user = new User(&quot;服部半藏&quot;);    userRepository.save(user);    if (true) {        throw new RuntimeException(&quot;save 抛异常了&quot;);    }}</code></pre><hr><p>在抛出异常之后，数据会回滚为插入前状态。</p><p>额外注意：（两种数据存储引擎）</p><ol><li>MyISAM 。MyISAM 是mysql默认的数据库引擎（5.5）版本之前，虽然性能较好，但是不支持事务处理。</li><li>InnoDB。 InnoDB提供指出事务处理，外部键等高级数据库功能。</li></ol><p>如果使用jpa自动建表时，如果需要使用事务功能时，需要在配置中将数据库格式指定为InnoDB</p><pre><code>spring.jpa.database-platform=org.hibernate.dialect.MySQL5InnoDBDialect</code></pre>]]></content:encoded>
       
       <comments>http://www.sijia3.top/2018/08/16/dddd/#disqus_thread</comments>
     </item>

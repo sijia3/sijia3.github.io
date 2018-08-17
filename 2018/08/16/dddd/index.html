@@ -87,17 +87,17 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="10" src="//cdn.bootcss.com/canv
 
 
 
-<meta name="description" content="我是一个无聊的人">
+<meta name="description" content="事务事务是一个抽象，它将一系列的细微操作组合起来形成一个整体上的操作。这个整体的操作要么成功，要么失败，不存在其他状态（原子性） 举一个简单的例子，货品入库粗略可分为下面两个行为：  创建货品入库数量的入库单 在对应的货品表中添加对应的货品数量  一个成功的入库操作。上面的两个行为必须要一起成功。不允许创建入库数据单之后，却没有在相应的数据表添加数据。这是不合法的。 在springboot中，使用">
 <meta property="og:type" content="article">
-<meta property="og:title" content="dddd">
+<meta property="og:title" content="事务">
 <meta property="og:url" content="http://www.sijia3.top/2018/08/16/dddd/index.html">
 <meta property="og:site_name" content="sijia3&#39;blog">
-<meta property="og:description" content="我是一个无聊的人">
+<meta property="og:description" content="事务事务是一个抽象，它将一系列的细微操作组合起来形成一个整体上的操作。这个整体的操作要么成功，要么失败，不存在其他状态（原子性） 举一个简单的例子，货品入库粗略可分为下面两个行为：  创建货品入库数量的入库单 在对应的货品表中添加对应的货品数量  一个成功的入库操作。上面的两个行为必须要一起成功。不允许创建入库数据单之后，却没有在相应的数据表添加数据。这是不合法的。 在springboot中，使用">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-16T09:45:00.264Z">
+<meta property="og:updated_time" content="2018-08-17T07:01:44.877Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="dddd">
-<meta name="twitter:description" content="我是一个无聊的人">
+<meta name="twitter:title" content="事务">
+<meta name="twitter:description" content="事务事务是一个抽象，它将一系列的细微操作组合起来形成一个整体上的操作。这个整体的操作要么成功，要么失败，不存在其他状态（原子性） 举一个简单的例子，货品入库粗略可分为下面两个行为：  创建货品入库数量的入库单 在对应的货品表中添加对应的货品数量  一个成功的入库操作。上面的两个行为必须要一起成功。不允许创建入库数据单之后，却没有在相应的数据表添加数据。这是不合法的。 在springboot中，使用">
 
 
 
@@ -133,7 +133,7 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="10" src="//cdn.bootcss.com/canv
 
 
 
-  <title>dddd | sijia3'blog</title>
+  <title>事务 | sijia3'blog</title>
   
 
 
@@ -287,7 +287,7 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="10" src="//cdn.bootcss.com/canv
 
         
         
-          <h1 class="post-title" itemprop="name headline">dddd</h1>
+          <h1 class="post-title" itemprop="name headline">事务</h1>
         
 
         <div class="post-meta">
@@ -309,6 +309,28 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="10" src="//cdn.bootcss.com/canv
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/spring-boot-事务/" itemprop="url" rel="index">
+                    <span itemprop="name">spring boot 事务</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -342,7 +364,35 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="10" src="//cdn.bootcss.com/canv
       
 
       
-        
+        <h1 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h1><p>事务是一个抽象，它将一系列的细微操作组合起来形成一个整体上的操作。这个整体的操作要么成功，要么失败，不存在其他状态（原子性）</p>
+<p>举一个简单的例子，货品入库粗略可分为下面两个行为：</p>
+<ol>
+<li>创建货品入库数量的入库单</li>
+<li>在对应的货品表中添加对应的货品数量</li>
+</ol>
+<p>一个成功的入库操作。上面的两个行为必须要一起成功。不允许创建入库数据单之后，却没有在相应的数据表添加数据。这是不合法的。</p>
+<p>在springboot中，使用事务功能需要用到@Transactional这个注解。</p>
+<p>例如在Controller中某个方法下使用该注解。</p>
+<hr>
+<pre><code>@Transactional
+@Override
+public void save() {
+    User user = new User(&quot;服部半藏&quot;);
+    userRepository.save(user);
+    if (true) {
+        throw new RuntimeException(&quot;save 抛异常了&quot;);
+    }
+}
+</code></pre><hr>
+<p>在抛出异常之后，数据会回滚为插入前状态。</p>
+<p>额外注意：（两种数据存储引擎）</p>
+<ol>
+<li>MyISAM 。MyISAM 是mysql默认的数据库引擎（5.5）版本之前，虽然性能较好，但是不支持事务处理。</li>
+<li>InnoDB。 InnoDB提供指出事务处理，外部键等高级数据库功能。</li>
+</ol>
+<p>如果使用jpa自动建表时，如果需要使用事务功能时，需要在配置中将数据库格式指定为InnoDB</p>
+<pre><code>spring.jpa.database-platform=org.hibernate.dialect.MySQL5InnoDBDialect
+</code></pre>
       
     </div>
     
@@ -443,8 +493,17 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="10" src="//cdn.bootcss.com/canv
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -474,7 +533,7 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="10" src="//cdn.bootcss.com/canv
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -545,6 +604,22 @@ color="0,0,255" opacity='0.7' zIndex="-2" count="10" src="//cdn.bootcss.com/canv
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#事务"><span class="nav-number">1.</span> <span class="nav-text">事务</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
